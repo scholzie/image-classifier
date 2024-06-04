@@ -4,4 +4,5 @@ numpy
 pandas
 matplotlib
 pillow
-opencv-python
+scipy
+# opencv-python

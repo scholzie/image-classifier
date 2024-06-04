@@ -1,5 +1,4 @@
-import numpy as np
-from keras.models import load_model
+from tensorflow.keras.models import load_model
 from .data_preprocessing import load_and_preprocess_image
 
 def predict(image_path, model_path='results/model/cifar10_model.keras', maintain_aspect_ratio=False):

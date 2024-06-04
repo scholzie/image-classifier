@@ -8,7 +8,7 @@ This project is an image classification application using Convolutional Neural N
 
 - `data/`: Contains datasets and images.
 - `src/`: Source code for data preprocessing, model building, and prediction.
-- `results/`: Stores results, models, and logs.
+- `results/`: Stores image output, models, and logs.
 
 ## Setup
 
@@ -28,13 +28,34 @@ This project is an image classification application using Convolutional Neural N
 
 - Train the model:
 
-  ```python
-  from src.model import build_model, save_model
-
-  model = build_model()
-  # Add code for training the model
-  save_model(model)
+  ```bash
+  python -m src.train
   ```
+
+  This will create two models - one using data augmentation, and one without.
+
+  Note: If the model(s) already exist(s), delete/rename them from `/results/model/` or run
+
+  ```bash
+  python -m src.train -f
+  ```
+
+- Compare the models:
+
+  ```bash
+  python -m src.compare
+  ```
+
+  This runs an evaluation of the two models and reports Loss and Accuracy:
+
+  ```
+  Model without Data Augmentation: Loss = 0.9609, Accuracy = 0.6886
+  Model with Data Augmentation:    Loss = 0.8786, Accuracy = 0.7005
+  ```
+
+  The program will then run a prediction on a number of test images using both models. The test images can be found in `/results/output/<Ymd-HMS>/`
+
+  Note: comparison can be run during the above training step by using `python -m src.train -c`
 
 - Predict an image:
 
@@ -51,7 +72,7 @@ This project is an image classification application using Convolutional Neural N
 
 - **Model Improvement:**
 
-  - Apply data augmentation techniques
+  - ~~Apply data augmentation techniques~~
   - Implement regularization techniques (dropout, batch normalization)
   - Perform hyperparameter tuning
 
@@ -81,6 +102,7 @@ This project is an image classification application using Convolutional Neural N
   - Calculate detailed metrics (precision, recall, F1-score)
 
 - **Application Development:**
+  - Implement a CLI to run the project
   - Develop a web application for image upload and classification
   - Create an API for the image classification model
 

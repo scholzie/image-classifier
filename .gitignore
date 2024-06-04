@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.h5
+*.keras
+data/
+results/
+working-dir/
+.venv/

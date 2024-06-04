@@ -1,10 +1,12 @@
 from src.model import build_model, save_model, load_model
 from src.predict import predict, get_class_probabilities, print_class_probabilities
+from src.util import CIFAR10_CLASS_NAMES as class_names
+import sys
 
 def main():
     # Example usage
-    image_path = 'path_to_your_image.jpg'  # Replace with the path to your image
-    class_names = ['airplane', 'automobile', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck']
+    # TODO: accept filename as argument
+    image_path = './working-dir/747-400.jpg'  # Replace with the path to your image
 
     # Predict an image
     predictions = predict(image_path, maintain_aspect_ratio=True)

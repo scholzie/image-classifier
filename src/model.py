@@ -1,5 +1,5 @@
-from keras.models import Sequential, load_model
-from keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
+from tensorflow.keras.models import Sequential, load_model
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense
 
 def build_model(input_shape=(32, 32, 3), num_classes=10):
     model = Sequential([
@@ -17,5 +17,5 @@ def build_model(input_shape=(32, 32, 3), num_classes=10):
 def save_model(model, file_path='results/model/cifar10_model.keras'):
     model.save(file_path)
 
-def load_model(file_path='results/model/cifar10_model.keras'):
+def load_custom_model(file_path='results/model/cifar10_model.keras'):
     return load_model(file_path)
